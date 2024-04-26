@@ -42,7 +42,7 @@ def determine_fvg(previous, current, next):
             })
 
 def calculate_fvg(df):
-    for i in range(1, len(df) - 2):
+    for i in range(1, len(df) - 3):
         previous = df.iloc[i - 1]
         current = df.iloc[i]
         next = df.iloc[i + 1]
@@ -51,7 +51,7 @@ def calculate_fvg(df):
     i=0
     while i < len(BEAR_FVGS):
         fvg_time = BEAR_FVGS[i]['time']
-        df_after_fvg = df[df['time'] > fvg_time]
+        df_after_fvg = df[df['time'] > fvg_time][:-2]
         if (df_after_fvg['close'] > BEAR_FVGS[i]['fvg_high']).any():
             del BEAR_FVGS[i]
         else:
@@ -60,7 +60,7 @@ def calculate_fvg(df):
     i=0
     while i < len(BULL_FVGS):
         fvg_time = BULL_FVGS[i]['time']
-        df_after_fvg = df[df['time'] > fvg_time]
+        df_after_fvg = df[df['time'] > fvg_time][:-2]
         if (df_after_fvg['close'] < BULL_FVGS[i]['fvg_low']).any():
             del BULL_FVGS[i]
         else:
@@ -73,20 +73,23 @@ def execute():
         current_minute = now.minute
         current_second = now.second
         if current_minute % 5 == 0 and current_second == 5:
-            print(f"Checking @ {now}")  # Print the timestamp before fetching data
+            print(f"Checking @ {now}")
+
             df = fetch_data()
             calculate_fvg(df)
             latest_candle = df.iloc[-2]
+
             is_bull = latest_candle['close'] >= latest_candle['open']
 
             if is_bull:
                 for x in BEAR_FVGS:
-                    if latest_candle['close'] >= x['fvg_high']:
+                    if latest_candle['close'] > x['fvg_high']:
                         print(f"market long @ {latest_candle['close']} --- time: {latest_candle['time']} --- FVG: {x}")
             else:
                 for x in BULL_FVGS:
-                    if latest_candle['close'] <= x['fvg_low']:
+                    if latest_candle['close'] < x['fvg_low']:
                         print(f"market short @ {latest_candle['close']} --- time: {latest_candle['time']}  --- FVG: {x}")
+            time.sleep(1)
 
 if __name__ == '__main__':
     execute()
