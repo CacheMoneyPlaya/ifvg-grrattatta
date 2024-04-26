@@ -6,11 +6,17 @@ import time
 import os
 import json
 
-BEAR_FVGS = []
-BULL_FVGS = []
+def gap_valid(num1, num2):
+    threshold = 0.0014  # 0.14%
+    if num1 == 0 and num2 == 0:
+        return False  # Handle the case when both numbers are zero
+
+    percentage_difference = abs(num1 - num2) / max(abs(num1), abs(num2)) * 100
+
+    return (percentage_difference > threshold)
 
 def fetch_data():
-    url = "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=1000"
+    url = "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=1500"
     response = requests.get(url)
     if response.status_code == 200:
         df = pd.DataFrame(response.json(), columns=['time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
@@ -25,7 +31,7 @@ def determine_fvg(previous, current, next):
         if (
             (previous['high'] >= current['open'] and (previous['high'] <= current['close'])) and
             (next['low'] <= current['close'] and next['low'] >= current['open']) and
-            previous['high'] <= next['low']
+            previous['high'] <= next['low'] and gap_valid(previous['high'], latest['low'])
         ):
             BULL_FVGS.append({
                 'time': current['time'],
@@ -35,7 +41,7 @@ def determine_fvg(previous, current, next):
         elif (
                 (previous['low'] <= current['open'] and previous['low'] >= current['close']) and
                 (next['high'] >= current['close'] and next['high'] <= current['open']) and
-                previous['low'] >= next['high']
+                previous['low'] >= next['high'] and gap_valid(previous['high'], latest['low'])
         ):
             BEAR_FVGS.append({
                 'time': current['time'],
@@ -44,7 +50,7 @@ def determine_fvg(previous, current, next):
             })
 
 def calculate_fvg(df):
-    for i in range(1, len(df) - 3):
+    for i in range(1, len(df) - 2):
         previous = df.iloc[i - 1]
         current = df.iloc[i]
         next = df.iloc[i + 1]
@@ -53,7 +59,7 @@ def calculate_fvg(df):
     i=0
     while i < len(BEAR_FVGS):
         fvg_time = BEAR_FVGS[i]['time']
-        df_after_fvg = df[df['time'] > fvg_time][:-2]
+        df_after_fvg = df[df['time'] > fvg_time].iloc[:-2]
         if (df_after_fvg['close'] > BEAR_FVGS[i]['fvg_high']).any():
             del BEAR_FVGS[i]
         else:
@@ -62,7 +68,7 @@ def calculate_fvg(df):
     i=0
     while i < len(BULL_FVGS):
         fvg_time = BULL_FVGS[i]['time']
-        df_after_fvg = df[df['time'] > fvg_time][:-2]
+        df_after_fvg = df[df['time'] > fvg_time].iloc[:-2]
         if (df_after_fvg['close'] < BULL_FVGS[i]['fvg_low']).any():
             del BULL_FVGS[i]
         else:
@@ -78,21 +84,21 @@ def log_trade(side, entry, timestamp, fvg_high, fvg_low):
         'fvg_low': fvg_low,
     }
 
-    # Load existing log or create a new list
     try:
         with open('trade_execution_log.json', 'r') as file:
             trade_log = json.load(file)
     except FileNotFoundError:
         trade_log = []
 
-    # Append the new trade to the log
     trade_log.append(trade)
 
-    # Write the updated log back to the file
     with open('trade_execution_log.json', 'w') as file:
         json.dump(trade_log, file, indent=4)
 
 def execute():
+    global BULL_FVGS, BEAR_FVGS  # Add these lines
+    BULL_FVGS = []  # initialize them here
+    BEAR_FVGS = []
     while True:
         now = datetime.now()
         current_minute = now.minute
@@ -102,6 +108,7 @@ def execute():
 
             df = fetch_data()
             calculate_fvg(df)
+
             latest_candle = df.iloc[-2]
 
             is_bull = latest_candle['close'] >= latest_candle['open']
@@ -110,16 +117,15 @@ def execute():
                 for x in BEAR_FVGS:
                     if latest_candle['close'] > x['fvg_high']:
                         print(f"market LONG @ {latest_candle['time']}")
-                        print(x)
-                        print('----------------------')
                         log_trade('long', latest_candle['close'], datetime.now(), x['fvg_high'], x['fvg_low'])
             else:
                 for x in BULL_FVGS:
                     if latest_candle['close'] < x['fvg_low']:
                         print(f"market SHORT @ {latest_candle['time']}")
                         log_trade('short', latest_candle['close'], datetime.now(), x['fvg_high'], x['fvg_low'])
-
-            time.sleep(1)
+            BULL_FVGS = []
+            BEAR_FVGS = []
+            time.sleep(280)
 
 if __name__ == '__main__':
     if os.path.exists('trade_execution_log.json'):
