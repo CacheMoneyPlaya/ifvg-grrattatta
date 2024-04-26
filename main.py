@@ -3,6 +3,8 @@ import plotly.graph_objects as go
 import pandas as pd
 from datetime import datetime
 import time
+import os
+import json
 
 BEAR_FVGS = []
 BULL_FVGS = []
@@ -67,12 +69,35 @@ def calculate_fvg(df):
             i += 1
 
 
+def log_trade(side, entry, timestamp, fvg_high, fvg_low):
+    trade = {
+        'side': side,
+        'entry': entry,
+        'timestamp': timestamp.isoformat(),
+        'fvg_high': fvg_high,
+        'fvg_low': fvg_low,
+    }
+
+    # Load existing log or create a new list
+    try:
+        with open('trade_execution_log.json', 'r') as file:
+            trade_log = json.load(file)
+    except FileNotFoundError:
+        trade_log = []
+
+    # Append the new trade to the log
+    trade_log.append(trade)
+
+    # Write the updated log back to the file
+    with open('trade_execution_log.json', 'w') as file:
+        json.dump(trade_log, file, indent=4)
+
 def execute():
     while True:
         now = datetime.now()
         current_minute = now.minute
         current_second = now.second
-        if current_minute % 5 == 0 and current_second == 5:
+        if current_minute % 5 == 0 and current_second == 2:
             print(f"Checking @ {now}")
 
             df = fetch_data()
@@ -84,12 +109,21 @@ def execute():
             if is_bull:
                 for x in BEAR_FVGS:
                     if latest_candle['close'] > x['fvg_high']:
-                        print(f"market long @ {latest_candle['close']} --- time: {latest_candle['time']} --- FVG: {x}")
+                        print(f"market LONG @ {latest_candle['time']}")
+                        print(x)
+                        print('----------------------')
+                        log_trade('long', latest_candle['close'], datetime.now(), x['fvg_high'], x['fvg_low'])
             else:
                 for x in BULL_FVGS:
                     if latest_candle['close'] < x['fvg_low']:
-                        print(f"market short @ {latest_candle['close']} --- time: {latest_candle['time']}  --- FVG: {x}")
+                        print(f"market SHORT @ {latest_candle['time']}")
+                        log_trade('short', latest_candle['close'], datetime.now(), x['fvg_high'], x['fvg_low'])
+
             time.sleep(1)
 
 if __name__ == '__main__':
+    if os.path.exists('trade_execution_log.json'):
+        with open('trade_execution_log.json', 'w') as file:
+            file.write('[]')
+
     execute()
