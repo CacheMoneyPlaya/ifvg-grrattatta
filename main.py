@@ -22,6 +22,8 @@ def fetch_data():
         df = pd.DataFrame(response.json(), columns=['time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
         df['time'] = pd.to_datetime(df['time'], unit='ms')
 
+        df['time'] = df['time'] + timedelta(hours=1)
+
         return df
     else:
         print("Failed to fetch data:", response.text)
