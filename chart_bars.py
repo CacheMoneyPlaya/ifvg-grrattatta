@@ -9,7 +9,7 @@ BULL_FVGS = []
 DATA_FILE = 'btc_data.json'
 
 def fetch_data():
-    url = "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=30m&limit=100"
+    url = "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100"
     response = requests.get(url)
     if response.status_code == 200:
         df = pd.DataFrame(response.json(), columns=['time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])

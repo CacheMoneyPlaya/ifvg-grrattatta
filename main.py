@@ -31,7 +31,7 @@ def determine_fvg(previous, current, next):
         if (
             (previous['high'] >= current['open'] and (previous['high'] <= current['close'])) and
             (next['low'] <= current['close'] and next['low'] >= current['open']) and
-            previous['high'] <= next['low'] and gap_valid(previous['high'], next['low'])
+            previous['high'] <= next['low'] and gap_valid(next['low'], previous['high'])
         ):
             BULL_FVGS.append({
                 'time': current['time'],
