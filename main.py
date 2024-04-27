@@ -5,6 +5,7 @@ from datetime import datetime
 import time
 import os
 import json
+import timedelta
 
 def gap_valid(num1, num2):
     threshold = 20
