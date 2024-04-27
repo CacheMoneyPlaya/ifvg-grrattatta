@@ -2,11 +2,20 @@ import os
 import requests
 import plotly.graph_objects as go
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 
 BEAR_FVGS = []
 BULL_FVGS = []
 DATA_FILE = 'btc_data.json'
+
+def gap_valid(num1, num2):
+    threshold = 40
+    num1 = float(num1)
+    num2 = float(num2)
+
+    spread = abs(num1 - num2)
+
+    return spread >= threshold
 
 def fetch_data():
     url = "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100"
@@ -14,6 +23,7 @@ def fetch_data():
     if response.status_code == 200:
         df = pd.DataFrame(response.json(), columns=['time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
         df['time'] = pd.to_datetime(df['time'], unit='ms')
+        df['time'] = df['time'] + timedelta(hours=1)
 
         return df
     else:
@@ -24,7 +34,7 @@ def determine_fvg(previous, current, next):
     if (
         (previous['high'] >= current['open'] and (previous['high'] <= current['close'])) and
         (next['low'] <= current['close'] and next['low'] >= current['open']) and
-        previous['high'] <= next['low']
+        previous['high'] <= next['low'] and gap_valid(next['low'], previous['high'])
     ):
         BULL_FVGS.append({
             'time': current['time'],
@@ -34,7 +44,7 @@ def determine_fvg(previous, current, next):
     elif (
             (previous['low'] <= current['open'] and previous['low'] >= current['close']) and
             (next['high'] >= current['close'] and next['high'] <= current['open']) and
-            previous['low'] >= next['high']
+            previous['low'] >= next['high'] and gap_valid(previous['low'], next['high'])
     ):
         BEAR_FVGS.append({
             'time': current['time'],
