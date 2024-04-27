@@ -7,7 +7,7 @@ import os
 import json
 
 def gap_valid(num1, num2):
-    threshold = 20
+    threshold = 5
     num1 = float(num1)
     num2 = float(num2)
 
@@ -16,16 +16,25 @@ def gap_valid(num1, num2):
     return spread >= threshold
 
 def fetch_data():
-    url = "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=1500"
-    response = requests.get(url)
-    if response.status_code == 200:
-        df = pd.DataFrame(response.json(), columns=['time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
-        df['time'] = pd.to_datetime(df['time'], unit='ms')
-
+    # Check if JSON file exists
+    if os.path.isfile('btc_data.json'):
+        # If JSON file exists, load data from file
+        df = pd.read_json('btc_data.json')
         return df
     else:
-        print("Failed to fetch data:", response.text)
-        return None
+        url = "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=1500"
+        response = requests.get(url)
+        if response.status_code == 200:
+            df = pd.DataFrame(response.json(), columns=['time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
+            df['time'] = pd.to_datetime(df['time'], unit='ms')
+
+            # Save DataFrame to JSON file
+            df.to_json('btc_data.json', orient='records', date_format='iso')
+
+            return df
+        else:
+            print("Failed to fetch data:", response.text)
+            return None
 
 def determine_fvg(previous, current, next):
         if (
@@ -103,7 +112,7 @@ def execute():
         now = datetime.now()
         current_minute = now.minute
         current_second = now.second
-        if current_minute % 5 == 0 and current_second == 2:
+        if current_minute % 1 == 0:
             print(f"Checking @ {now}")
 
             df = fetch_data()
@@ -126,6 +135,7 @@ def execute():
             BULL_FVGS = []
             BEAR_FVGS = []
             time.sleep(280)
+            exit()
 
 if __name__ == '__main__':
     if os.path.exists('trade_execution_log.json'):
