@@ -7,13 +7,13 @@ import os
 import json
 
 def gap_valid(num1, num2):
-    threshold = 0.0014  # 0.14%
+    threshold = 90
     num1 = float(num1)
     num2 = float(num2)
 
-    percentage_difference = abs(num1 - num2) / max(abs(num1), abs(num2))
+    spread = abs(num1 - num2)
 
-    return (percentage_difference > threshold)
+    return spread >= threshold
 
 def fetch_data():
     url = "https://fapi.binance.com/fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=1500"
@@ -31,7 +31,7 @@ def determine_fvg(previous, current, next):
         if (
             (previous['high'] >= current['open'] and (previous['high'] <= current['close'])) and
             (next['low'] <= current['close'] and next['low'] >= current['open']) and
-            previous['high'] <= next['low'] and gap_valid(previous['high'], current['low'])
+            previous['high'] <= next['low'] and gap_valid(previous['high'], next['low'])
         ):
             BULL_FVGS.append({
                 'time': current['time'],
@@ -41,7 +41,7 @@ def determine_fvg(previous, current, next):
         elif (
                 (previous['low'] <= current['open'] and previous['low'] >= current['close']) and
                 (next['high'] >= current['close'] and next['high'] <= current['open']) and
-                previous['low'] >= next['high'] and gap_valid(previous['high'], current['low'])
+                previous['low'] >= next['high'] and gap_valid(previous['low'], next['high'])
         ):
             BEAR_FVGS.append({
                 'time': current['time'],
