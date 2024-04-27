@@ -1,11 +1,10 @@
 import requests
 import plotly.graph_objects as go
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 import time
 import os
 import json
-import timedelta
 
 def gap_valid(num1, num2):
     threshold = 20
