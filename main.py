@@ -8,10 +8,10 @@ import json
 
 def gap_valid(num1, num2):
     threshold = 0.0014  # 0.14%
-    if num1 == 0 and num2 == 0:
-        return False  # Handle the case when both numbers are zero
+    num1 = float(num1)
+    num2 = float(num2)
 
-    percentage_difference = abs(num1 - num2) / max(abs(num1), abs(num2)) * 100
+    percentage_difference = abs(num1 - num2) / max(abs(num1), abs(num2))
 
     return (percentage_difference > threshold)
 
@@ -31,7 +31,7 @@ def determine_fvg(previous, current, next):
         if (
             (previous['high'] >= current['open'] and (previous['high'] <= current['close'])) and
             (next['low'] <= current['close'] and next['low'] >= current['open']) and
-            previous['high'] <= next['low'] and gap_valid(previous['high'], latest['low'])
+            previous['high'] <= next['low'] and gap_valid(previous['high'], current['low'])
         ):
             BULL_FVGS.append({
                 'time': current['time'],
@@ -41,7 +41,7 @@ def determine_fvg(previous, current, next):
         elif (
                 (previous['low'] <= current['open'] and previous['low'] >= current['close']) and
                 (next['high'] >= current['close'] and next['high'] <= current['open']) and
-                previous['low'] >= next['high'] and gap_valid(previous['high'], latest['low'])
+                previous['low'] >= next['high'] and gap_valid(previous['high'], current['low'])
         ):
             BEAR_FVGS.append({
                 'time': current['time'],
