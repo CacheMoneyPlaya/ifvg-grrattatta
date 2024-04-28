@@ -7,7 +7,7 @@ import os
 import json
 
 def gap_valid(num1, num2):
-    threshold = 20
+    threshold = 80
     num1 = float(num1)
     num2 = float(num2)
 
