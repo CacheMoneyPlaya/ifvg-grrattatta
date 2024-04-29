@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 import time
 import os
 import json
+from LiquidiyLevels.liquidity_levels import get_nearest_liq_levels
 
 def gap_valid(num1, num2):
     threshold = 80
@@ -77,10 +78,20 @@ def calculate_fvg(df):
             i += 1
 
 
-def log_trade(side, entry, timestamp, fvg_high, fvg_low):
+def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low):
+
+    stop_loss = nearest_ssl_price
+    tp_difference = abs(entry - nearest_ssl_price) * 2
+    if side == 'long':
+        take_profit = entry + tp_difference
+    else:
+        take_profit = entry - tp_difference
+
     trade = {
         'side': side,
         'entry': entry,
+        'stop_loss': stop_loss,
+        'take_profit': take_profit,
         'timestamp': timestamp.isoformat(),
         'fvg_high': fvg_high,
         'fvg_low': fvg_low,
@@ -97,20 +108,32 @@ def log_trade(side, entry, timestamp, fvg_high, fvg_low):
     with open('trade_execution_log.json', 'w') as file:
         json.dump(trade_log, file, indent=4)
 
+def find_nearest_price(prices, target_price, threshold=400):
+    closest_price = None
+    min_gap = threshold + 1  # Initialize with a value larger than threshold
+    for price in prices:
+        gap = abs(price - target_price)
+        if gap <= threshold and gap < min_gap:
+            closest_price = price
+            min_gap = gap
+    return closest_price
+
 def execute():
-    global BULL_FVGS, BEAR_FVGS  # Add these lines
-    BULL_FVGS = []  # initialize them here
+    global BULL_FVGS, BEAR_FVGS, LIQ_LEVELS
+    BULL_FVGS = []
     BEAR_FVGS = []
+    LIQ_LEVELS = []
+
     while True:
         now = datetime.now()
         current_minute = now.minute
         current_second = now.second
+
         if current_minute % 5 == 0 and current_second == 2:
             print(f"Checking @ {now}")
-
+            LIQ_LEVELS = get_nearest_liq_levels()
             df = fetch_data()
             calculate_fvg(df)
-
             latest_candle = df.iloc[-2]
 
             is_bull = latest_candle['close'] >= latest_candle['open']
@@ -119,14 +142,20 @@ def execute():
                 for x in BEAR_FVGS:
                     if latest_candle['close'] > x['fvg_high']:
                         print(f"market LONG @ {datetime.now()}")
-                        log_trade('long', latest_candle['close'], datetime.now(), x['fvg_high'], x['fvg_low'])
+                        nearest_ssl_price = find_nearest_price([ssl['price'] for ssl in LIQ_LEVELS['SSL']], latest_candle['close'])
+                        if nearest_ssl_price is not None:
+                            log_trade('long', latest_candle['close'], nearest_ssl_price, datetime.now(), x['fvg_high'], x['fvg_low'])
             else:
                 for x in BULL_FVGS:
                     if latest_candle['close'] < x['fvg_low']:
                         print(f"market SHORT @ {datetime.now()}")
-                        log_trade('short', latest_candle['close'], datetime.now(), x['fvg_high'], x['fvg_low'])
+                        nearest_bsl_price = find_nearest_price([bsl['price'] for bsl in LIQ_LEVELS['BSL']], latest_candle['close'])
+                        if nearest_bsl_price is not None:
+                            log_trade('short', latest_candle['close'], nearest_ssl_price, datetime.now(), x['fvg_high'], x['fvg_low'])
+
             BULL_FVGS = []
             BEAR_FVGS = []
+            LIQ_LEVELS = []
             time.sleep(280)
 
 if __name__ == '__main__':
