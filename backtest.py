@@ -75,13 +75,12 @@ def find_nearest_price(prices, target_price, threshold=600):
     return closest_price
 
 def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low, fvg_time):
-
     stop_loss = nearest_ssl_price
     tp_difference = abs(float(entry) - float(nearest_ssl_price)) * 2
     if side == 'long':
-        take_profit = float(entry) + float(tp_difference)
+        take_profit = float(entry) + tp_difference
     else:
-        take_profit = float(entry) - float(tp_difference)
+        take_profit = float(entry) - tp_difference
 
     trade = {
         'side': side,
