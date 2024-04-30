@@ -1,62 +1,46 @@
 import json
 
 # Load trade execution log
-with open('trade_execution_log.json', 'r') as file:
-    trade_log = json.load(file)
+with open('trade_execution_log.json', 'r') as f:
+    trade_log = json.load(f)
 
 # Load historical data
-with open('HistoricalData/btc_m5_10_days.json', 'r') as file:
-    historical_data = json.load(file)
+with open('HistoricalData/btc_m5_10_days.json', 'r') as f:
+    historical_data = json.load(f)
 
-# Initialize variables
-winning_trades = 0
-losing_trades = 0
-cumulative_profit = 0
+wins = 0
+losses = 0
 
-def calculate_profit(trade):
+for trade in trade_log:
+    side = trade['side']
     entry_price = trade['entry']
     stop_loss = trade['stop_loss']
     take_profit = trade['take_profit']
-    side = trade['side']
-    open_price = None
+    timestamp = trade['timestamp']
 
-    # Find open price of the candle at the trade's timestamp
-    for candle in historical_data:
-        if candle['time'] == trade['timestamp']:
-            open_price = float(candle['open'])
-            break
+    # Find corresponding OHLC data for the trade timestamp
+    corresponding_data = next(data for data in historical_data if data['time'] == timestamp)
 
-    print(f"Trade: {trade['timestamp']}, Open Price: {open_price}")
+    if side == 'long':
+        # Loop through historical data from the timestamp until take_profit or stop_loss is reached
+        for data in historical_data[historical_data.index(corresponding_data):]:
+            close_price = float(data['close'])
+            if close_price >= take_profit:
+                wins += 1
+                break
+            elif close_price <= stop_loss:
+                losses += 1
+                break
+    elif side == 'short':
+        # Loop through historical data from the timestamp until stop_loss or take_profit is reached
+        for data in historical_data[historical_data.index(corresponding_data):]:
+            close_price = float(data['close'])
+            if close_price >= stop_loss:
+                losses += 1
+                break
+            elif close_price <= take_profit:
+                wins += 1
+                break
 
-    # Calculate profit or current profit if trade is still open
-    if open_price:
-        if side == 'long':
-            position_size = 100 / (entry_price - stop_loss)  # Calculate position size
-            profit = (open_price - entry_price) * position_size
-            return profit
-        elif side == 'short':
-            position_size = 100 / (stop_loss - entry_price)  # Calculate position size
-            profit = (entry_price - open_price) * position_size
-            return profit
-    else:
-        return None  # Trade still open, profit is not calculated yet
-
-
-
-
-# Iterate through trades and calculate profit
-for trade in trade_log:
-    profit = calculate_profit(trade)
-    if profit is not None:
-        cumulative_profit += profit
-        if profit > 0:
-            winning_trades += 1
-        elif profit < 0:
-            losing_trades += 1
-        print(f"Trade closed at {trade['timestamp']}, Profit: {profit}")
-
-# Output results
-print("\n--- Results ---")
-print(f"Total Winning Trades: {winning_trades}")
-print(f"Total Losing Trades: {losing_trades}")
-print(f"Cumulative Profit: {cumulative_profit}")
+print(f"Total Wins: {wins}")
+print(f"Total Losses: {losses}")
