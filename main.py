@@ -78,22 +78,22 @@ def calculate_fvg(df):
 
 
 def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low):
-
     stop_loss = nearest_ssl_price
     tp_difference = abs(float(entry) - float(nearest_ssl_price)) * 2
     if side == 'long':
-        take_profit = float(entry) + float(tp_difference)
+        take_profit = float(entry) + tp_difference
     else:
-        take_profit = float(entry) - float(tp_difference)
+        take_profit = float(entry) - tp_difference
 
     trade = {
         'side': side,
         'entry': entry,
         'stop_loss': stop_loss,
         'take_profit': take_profit,
-        'timestamp': timestamp.isoformat(),
+        'timestamp': timestamp,
         'fvg_high': fvg_high,
         'fvg_low': fvg_low,
+        'fvg_time': fvg_time,
     }
 
     try:

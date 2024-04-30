@@ -9,7 +9,7 @@ from tqdm import tqdm
 from LiquidityLevels.liquidity_levels import get_nearest_liq_levels
 
 def gap_valid(num1, num2):
-    threshold = 80
+    threshold = 90
     num1 = float(num1)
     num2 = float(num2)
 
@@ -64,7 +64,7 @@ def calculate_fvg(df):
         else:
             i += 1
 
-def find_nearest_price(prices, target_price, threshold=600):
+def find_nearest_price(prices, target_price, threshold=400):
     closest_price = None
     min_gap = threshold + 1
     for price in prices:
