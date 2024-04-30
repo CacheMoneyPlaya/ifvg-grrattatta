@@ -1,6 +1,4 @@
 import json
-import matplotlib.pyplot as plt
-import mplfinance as mpf
 import pandas as pd
 from scipy.signal import find_peaks
 import datetime
@@ -30,20 +28,23 @@ def fetch_multiple_data(symbol, interval, limit=1500, num_sets=3):
     return data_sets
 
 
-def get_nearest_liq_levels():
+def get_nearest_liq_levels(window_data = None):
     symbol = "BTCUSDT"
     interval = "5m"
     num_sets = 4
-    data_sets = fetch_multiple_data(symbol, interval, num_sets=num_sets)
 
-    combined_data = []
-    for data in data_sets:
-        combined_data.extend(data)
+    if window_data is not None:
+        df = window_data
+    else:
+        data_sets = fetch_multiple_data(symbol, interval, num_sets=num_sets)
 
-    combined_data.sort(key=lambda x: x[0])
+        combined_data = []
+        for data in data_sets:
+            combined_data.extend(data)
 
-    candlesticks = [{"timestamp": c[0] / 1000, "open": float(c[1]), "high": float(c[2]), "low": float(c[3]), "close": float(c[4])} for c in combined_data]
-    df = pd.DataFrame(candlesticks).set_index(pd.to_datetime(pd.DataFrame(candlesticks)['timestamp'], unit='s'))
+        combined_data.sort(key=lambda x: x[0])
+        candlesticks = [{"time": None, "open": float(c[1]), "high": float(c[2]), "low": float(c[3]), "close": float(c[4])} for c in combined_data]
+        df = pd.DataFrame(candlesticks).set_index(pd.to_datetime(pd.DataFrame(candlesticks)['time'], unit='s'))
 
     h = df['high'].values
     l = df['low'].values

@@ -5,10 +5,10 @@ from datetime import datetime, timedelta
 import time
 import os
 import json
-from LiquidiyLevels.liquidity_levels import get_nearest_liq_levels
+from LiquidityLevels.liquidity_levels import get_nearest_liq_levels
 
 def gap_valid(num1, num2):
-    threshold = 80
+    threshold = 60
     num1 = float(num1)
     num2 = float(num2)
 
@@ -22,7 +22,6 @@ def fetch_data():
     if response.status_code == 200:
         df = pd.DataFrame(response.json(), columns=['time', 'open', 'high', 'low', 'close', 'volume', 'close_time', 'quote_asset_volume', 'number_of_trades', 'taker_buy_base_asset_volume', 'taker_buy_quote_asset_volume', 'ignore'])
         df['time'] = pd.to_datetime(df['time'], unit='ms')
-
         df['time'] = df['time'] + timedelta(hours=1)
 
         return df
@@ -81,11 +80,11 @@ def calculate_fvg(df):
 def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low):
 
     stop_loss = nearest_ssl_price
-    tp_difference = abs(entry - nearest_ssl_price) * 2
+    tp_difference = abs(float(entry) - float(nearest_ssl_price)) * 2
     if side == 'long':
-        take_profit = entry + tp_difference
+        take_profit = float(entry) + float(tp_difference)
     else:
-        take_profit = entry - tp_difference
+        take_profit = float(entry) - float(tp_difference)
 
     trade = {
         'side': side,
@@ -108,11 +107,11 @@ def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low):
     with open('trade_execution_log.json', 'w') as file:
         json.dump(trade_log, file, indent=4)
 
-def find_nearest_price(prices, target_price, threshold=400):
+def find_nearest_price(prices, target_price, threshold=1000):
     closest_price = None
-    min_gap = threshold + 1  # Initialize with a value larger than threshold
+    min_gap = threshold + 1
     for price in prices:
-        gap = abs(price - target_price)
+        gap = abs(float(price) - float(target_price))
         if gap <= threshold and gap < min_gap:
             closest_price = price
             min_gap = gap
@@ -129,7 +128,7 @@ def execute():
         current_minute = now.minute
         current_second = now.second
 
-        if current_minute % 5 == 0 and current_second == 2:
+        if current_minute % 1 == 0 and current_second == 2:
             print(f"Checking @ {now}")
             LIQ_LEVELS = get_nearest_liq_levels()
             df = fetch_data()
@@ -141,17 +140,17 @@ def execute():
             if is_bull:
                 for x in BEAR_FVGS:
                     if latest_candle['close'] > x['fvg_high']:
-                        print(f"market LONG @ {datetime.now()}")
                         nearest_ssl_price = find_nearest_price([ssl['price'] for ssl in LIQ_LEVELS['SSL']], latest_candle['close'])
                         if nearest_ssl_price is not None:
+                            print(f"market LONG @ {datetime.now()}")
                             log_trade('long', latest_candle['close'], nearest_ssl_price, datetime.now(), x['fvg_high'], x['fvg_low'])
             else:
                 for x in BULL_FVGS:
                     if latest_candle['close'] < x['fvg_low']:
-                        print(f"market SHORT @ {datetime.now()}")
                         nearest_bsl_price = find_nearest_price([bsl['price'] for bsl in LIQ_LEVELS['BSL']], latest_candle['close'])
                         if nearest_bsl_price is not None:
-                            log_trade('short', latest_candle['close'], nearest_ssl_price, datetime.now(), x['fvg_high'], x['fvg_low'])
+                            print(f"market SHORT @ {datetime.now()}")
+                            log_trade('short', latest_candle['close'], nearest_bsl_price, datetime.now(), x['fvg_high'], x['fvg_low'])
 
             BULL_FVGS = []
             BEAR_FVGS = []
