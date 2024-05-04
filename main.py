@@ -107,7 +107,7 @@ def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low):
     with open('trade_execution_log.json', 'w') as file:
         json.dump(trade_log, file, indent=4)
 
-def find_nearest_price(prices, target_price, threshold=1000):
+def find_nearest_price(prices, target_price, threshold=750):
     closest_price = None
     min_gap = threshold + 1
     for price in prices:
@@ -128,7 +128,7 @@ def execute():
         current_minute = now.minute
         current_second = now.second
 
-        if current_minute % 1 == 0 and current_second == 2:
+        if current_minute % 5 == 0 and current_second == 1:
             print(f"Checking @ {now}")
             LIQ_LEVELS = get_nearest_liq_levels()
             df = fetch_data()

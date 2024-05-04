@@ -7,9 +7,10 @@ import os
 import json
 from tqdm import tqdm
 from LiquidityLevels.liquidity_levels import get_nearest_liq_levels
+from backtest_results import calculate_trade_stats
 
 def gap_valid(num1, num2):
-    threshold = 90
+    threshold = 150
     num1 = float(num1)
     num2 = float(num2)
 
@@ -39,7 +40,7 @@ def determine_fvg(previous, current, next):
                 'fvg_low': next['high'],
             })
 
-def calculate_fvg(df):
+def calculate_full_window_fvg(df):
     for i in range(1, len(df) - 2):
         previous = df.iloc[i - 1]
         current = df.iloc[i]
@@ -64,7 +65,28 @@ def calculate_fvg(df):
         else:
             i += 1
 
-def find_nearest_price(prices, target_price, threshold=400):
+
+def filter_violated_bear(current, first):
+    global BEAR_FVGS
+    BEAR_FVGS = [fvg for fvg in BEAR_FVGS if current['close'] < fvg['fvg_high'] and fvg['time'] >= first['time']]
+
+def filter_violated_bull(current, first):
+    global BULL_FVGS
+    BULL_FVGS = [fvg for fvg in BULL_FVGS if current['close'] > fvg['fvg_low'] and fvg['time'] >= first['time']]
+
+def calculate_current_fvg(df):
+    previous = df.iloc[-4]
+    current = df.iloc[-3]
+    next = df.iloc[-2]
+    first = df.iloc[0]
+
+    determine_fvg(previous, current, next)
+
+    filter_violated_bear(current, first)
+    filter_violated_bull(current, first)
+
+
+def find_nearest_price(prices, target_price, threshold=600):
     closest_price = None
     min_gap = threshold + 1
     for price in prices:
@@ -76,7 +98,7 @@ def find_nearest_price(prices, target_price, threshold=400):
 
 def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low, fvg_time):
     stop_loss = nearest_ssl_price
-    tp_difference = abs(float(entry) - float(nearest_ssl_price)) * 2
+    tp_difference = abs(float(entry) - float(nearest_ssl_price)) * 1.5
     if side == 'long':
         take_profit = float(entry) + tp_difference
     else:
@@ -129,7 +151,10 @@ def execute():
 
         LIQ_LEVELS = get_nearest_liq_levels(window_data)
 
-        calculate_fvg(window_data)
+        if i == 0:
+            calculate_full_window_fvg(window_data)
+        else:
+            calculate_current_fvg(window_data)
 
         latest_candle = window_data.iloc[-2]
 
@@ -148,8 +173,6 @@ def execute():
                     if nearest_bsl_price is not None:
                         log_trade('short', latest_candle['close'], nearest_bsl_price, latest_candle['time'], x['fvg_high'], x['fvg_low'], x['time'])
 
-        BULL_FVGS = []
-        BEAR_FVGS = []
         LIQ_LEVELS = []
 
 if __name__ == '__main__':
@@ -159,3 +182,7 @@ if __name__ == '__main__':
 
     execute()
     print('Complete Backtest')
+
+    print('-------------------BREAKDOWN-------------------')
+
+    calculate_trade_stats()

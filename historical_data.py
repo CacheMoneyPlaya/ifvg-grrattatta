@@ -28,7 +28,7 @@ def fetch_multiple_data(symbol, interval, limit=1500, num_sets=3):
 
 symbol = "BTCUSDT"
 interval = "5m"
-num_sets = 10
+num_sets = 9
 data_sets = fetch_multiple_data(symbol, interval, num_sets=num_sets)
 
 combined_data = []

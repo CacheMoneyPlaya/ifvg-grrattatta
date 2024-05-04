@@ -1,0 +1,1552 @@
+[
+    {
+        "side": "long",
+        "entry": 67868.3,
+        "stop_loss": 67291.3,
+        "take_profit": 68733.8,
+        "timestamp": "2024-04-05T04:10:00.000",
+        "fvg_high": 67826.6,
+        "fvg_low": 67695.3,
+        "fvg_time": "2024-04-05T03:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 68049.9,
+        "stop_loss": 68787.1,
+        "take_profit": 66944.09999999998,
+        "timestamp": "2024-04-05T17:10:00.000",
+        "fvg_high": 68123.1,
+        "fvg_low": 68056.0,
+        "fvg_time": "2024-04-05T16:55:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 67812.3,
+        "stop_loss": 67326.6,
+        "take_profit": 68540.85,
+        "timestamp": "2024-04-05T22:20:00.000",
+        "fvg_high": 67787.7,
+        "fvg_low": 67715.9,
+        "fvg_time": "2024-04-05T20:40:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 67577.2,
+        "stop_loss": 68068.3,
+        "take_profit": 66840.54999999999,
+        "timestamp": "2024-04-05T22:50:00.000",
+        "fvg_high": 67745.2,
+        "fvg_low": 67678.2,
+        "fvg_time": "2024-04-05T22:15:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 67630.5,
+        "stop_loss": 68068.3,
+        "take_profit": 66973.79999999999,
+        "timestamp": "2024-04-05T23:55:00.000",
+        "fvg_high": 67772.6,
+        "fvg_low": 67706.1,
+        "fvg_time": "2024-04-05T23:35:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 67933.0,
+        "stop_loss": 67485.0,
+        "take_profit": 68605.0,
+        "timestamp": "2024-04-06T01:30:00.000",
+        "fvg_high": 67925.6,
+        "fvg_low": 67865.0,
+        "fvg_time": "2024-04-06T00:55:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 67892.5,
+        "stop_loss": 68585.9,
+        "take_profit": 66852.40000000001,
+        "timestamp": "2024-04-06T07:05:00.000",
+        "fvg_high": 68000.9,
+        "fvg_low": 67899.3,
+        "fvg_time": "2024-04-06T06:25:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 67740.1,
+        "stop_loss": 68185.3,
+        "take_profit": 67072.30000000002,
+        "timestamp": "2024-04-06T11:30:00.000",
+        "fvg_high": 67899.9,
+        "fvg_low": 67784.0,
+        "fvg_time": "2024-04-06T06:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 67572.7,
+        "stop_loss": 67926.6,
+        "take_profit": 67041.84999999998,
+        "timestamp": "2024-04-06T14:25:00.000",
+        "fvg_high": 67671.7,
+        "fvg_low": 67598.0,
+        "fvg_time": "2024-04-06T04:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 67994.8,
+        "stop_loss": 67450.0,
+        "take_profit": 68812.0,
+        "timestamp": "2024-04-06T15:40:00.000",
+        "fvg_high": 67953.2,
+        "fvg_low": 67892.3,
+        "fvg_time": "2024-04-06T10:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 67993.3,
+        "stop_loss": 68585.9,
+        "take_profit": 67104.40000000002,
+        "timestamp": "2024-04-06T17:10:00.000",
+        "fvg_high": 68104.8,
+        "fvg_low": 67994.6,
+        "fvg_time": "2024-04-06T16:10:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 69309.3,
+        "stop_loss": 69923.7,
+        "take_profit": 68387.70000000001,
+        "timestamp": "2024-04-07T03:55:00.000",
+        "fvg_high": 69413.4,
+        "fvg_low": 69310.0,
+        "fvg_time": "2024-04-07T02:20:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69460.0,
+        "stop_loss": 68801.6,
+        "take_profit": 70447.59999999999,
+        "timestamp": "2024-04-07T04:25:00.000",
+        "fvg_high": 69450.7,
+        "fvg_low": 69387.9,
+        "fvg_time": "2024-04-07T03:50:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 69102.3,
+        "stop_loss": 69800.0,
+        "take_profit": 68055.75,
+        "timestamp": "2024-04-07T05:30:00.000",
+        "fvg_high": 69204.5,
+        "fvg_low": 69134.6,
+        "fvg_time": "2024-04-07T02:05:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69460.5,
+        "stop_loss": 68801.6,
+        "take_profit": 70448.84999999999,
+        "timestamp": "2024-04-07T06:05:00.000",
+        "fvg_high": 69406.0,
+        "fvg_low": 69296.1,
+        "fvg_time": "2024-04-07T05:10:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69479.9,
+        "stop_loss": 69198.3,
+        "take_profit": 69902.29999999999,
+        "timestamp": "2024-04-07T14:10:00.000",
+        "fvg_high": 69425.7,
+        "fvg_low": 69350.1,
+        "fvg_time": "2024-04-07T11:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69288.1,
+        "stop_loss": 68801.6,
+        "take_profit": 70017.85,
+        "timestamp": "2024-04-07T21:15:00.000",
+        "fvg_high": 69278.9,
+        "fvg_low": 69165.2,
+        "fvg_time": "2024-04-07T20:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69464.0,
+        "stop_loss": 68881.3,
+        "take_profit": 70338.04999999999,
+        "timestamp": "2024-04-08T00:15:00.000",
+        "fvg_high": 69444.8,
+        "fvg_low": 69370.7,
+        "fvg_time": "2024-04-07T20:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 69285.0,
+        "stop_loss": 69543.2,
+        "take_profit": 68897.70000000001,
+        "timestamp": "2024-04-08T01:00:00.000",
+        "fvg_high": 69356.7,
+        "fvg_low": 69287.8,
+        "fvg_time": "2024-04-08T00:05:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69403.4,
+        "stop_loss": 68900.9,
+        "take_profit": 70157.15,
+        "timestamp": "2024-04-08T01:10:00.000",
+        "fvg_high": 69360.7,
+        "fvg_low": 69292.3,
+        "fvg_time": "2024-04-08T01:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69358.3,
+        "stop_loss": 69040.4,
+        "take_profit": 69835.15000000002,
+        "timestamp": "2024-04-08T04:30:00.000",
+        "fvg_high": 69331.2,
+        "fvg_low": 69250.2,
+        "fvg_time": "2024-04-08T03:45:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69515.7,
+        "stop_loss": 69136.2,
+        "take_profit": 70084.95,
+        "timestamp": "2024-04-08T06:05:00.000",
+        "fvg_high": 69484.9,
+        "fvg_low": 69411.7,
+        "fvg_time": "2024-04-08T05:05:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69640.2,
+        "stop_loss": 69136.2,
+        "take_profit": 70396.2,
+        "timestamp": "2024-04-08T06:10:00.000",
+        "fvg_high": 69631.9,
+        "fvg_low": 69480.5,
+        "fvg_time": "2024-04-08T02:45:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 71739.6,
+        "stop_loss": 72171.6,
+        "take_profit": 71091.6,
+        "timestamp": "2024-04-09T00:35:00.000",
+        "fvg_high": 71830.2,
+        "fvg_low": 71766.3,
+        "fvg_time": "2024-04-08T23:50:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 71586.8,
+        "stop_loss": 72171.6,
+        "take_profit": 70709.6,
+        "timestamp": "2024-04-09T01:20:00.000",
+        "fvg_high": 71722.7,
+        "fvg_low": 71600.0,
+        "fvg_time": "2024-04-08T21:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 71471.4,
+        "stop_loss": 72077.3,
+        "take_profit": 70562.54999999999,
+        "timestamp": "2024-04-09T04:30:00.000",
+        "fvg_high": 71557.9,
+        "fvg_low": 71480.0,
+        "fvg_time": "2024-04-09T04:10:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 68678.3,
+        "stop_loss": 69425.0,
+        "take_profit": 67558.25,
+        "timestamp": "2024-04-09T17:50:00.000",
+        "fvg_high": 68945.8,
+        "fvg_low": 68750.0,
+        "fvg_time": "2024-04-06T23:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69322.4,
+        "stop_loss": 68686.9,
+        "take_profit": 70275.65,
+        "timestamp": "2024-04-10T01:25:00.000",
+        "fvg_high": 69317.0,
+        "fvg_low": 69236.5,
+        "fvg_time": "2024-04-10T00:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 69102.3,
+        "stop_loss": 69473.4,
+        "take_profit": 68545.65000000002,
+        "timestamp": "2024-04-10T01:35:00.000",
+        "fvg_high": 69267.0,
+        "fvg_low": 69192.5,
+        "fvg_time": "2024-04-10T01:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 69020.3,
+        "stop_loss": 69473.4,
+        "take_profit": 68340.65000000002,
+        "timestamp": "2024-04-10T02:00:00.000",
+        "fvg_high": 69205.5,
+        "fvg_low": 69044.4,
+        "fvg_time": "2024-04-10T00:40:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 68888.0,
+        "stop_loss": 69473.4,
+        "take_profit": 68009.90000000001,
+        "timestamp": "2024-04-10T02:05:00.000",
+        "fvg_high": 68951.6,
+        "fvg_low": 68889.6,
+        "fvg_time": "2024-04-09T20:20:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 68786.0,
+        "stop_loss": 69473.4,
+        "take_profit": 67754.90000000001,
+        "timestamp": "2024-04-10T02:35:00.000",
+        "fvg_high": 68902.9,
+        "fvg_low": 68842.0,
+        "fvg_time": "2024-04-10T02:25:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69184.2,
+        "stop_loss": 68514.0,
+        "take_profit": 70189.5,
+        "timestamp": "2024-04-10T10:55:00.000",
+        "fvg_high": 69115.0,
+        "fvg_low": 69052.0,
+        "fvg_time": "2024-04-10T10:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 69000.0,
+        "stop_loss": 69564.0,
+        "take_profit": 68154.0,
+        "timestamp": "2024-04-10T11:05:00.000",
+        "fvg_high": 69125.7,
+        "fvg_low": 69047.7,
+        "fvg_time": "2024-04-10T10:55:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69005.4,
+        "stop_loss": 68514.0,
+        "take_profit": 69742.49999999999,
+        "timestamp": "2024-04-10T11:50:00.000",
+        "fvg_high": 68955.0,
+        "fvg_low": 68866.0,
+        "fvg_time": "2024-04-10T11:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 69126.6,
+        "stop_loss": 68514.0,
+        "take_profit": 70045.50000000001,
+        "timestamp": "2024-04-10T12:25:00.000",
+        "fvg_high": 69125.7,
+        "fvg_low": 69042.8,
+        "fvg_time": "2024-04-10T11:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 68946.4,
+        "stop_loss": 69564.0,
+        "take_profit": 68019.99999999999,
+        "timestamp": "2024-04-10T13:20:00.000",
+        "fvg_high": 69051.4,
+        "fvg_low": 68976.0,
+        "fvg_time": "2024-04-10T12:10:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 69284.1,
+        "stop_loss": 69650.0,
+        "take_profit": 68735.25000000001,
+        "timestamp": "2024-04-10T18:05:00.000",
+        "fvg_high": 69370.1,
+        "fvg_low": 69287.8,
+        "fvg_time": "2024-04-10T17:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 70753.7,
+        "stop_loss": 70340.0,
+        "take_profit": 71374.25,
+        "timestamp": "2024-04-11T07:00:00.000",
+        "fvg_high": 70642.5,
+        "fvg_low": 70569.1,
+        "fvg_time": "2024-04-11T06:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 70840.1,
+        "stop_loss": 70421.0,
+        "take_profit": 71468.75000000001,
+        "timestamp": "2024-04-11T07:30:00.000",
+        "fvg_high": 70836.9,
+        "fvg_low": 70664.2,
+        "fvg_time": "2024-04-11T05:00:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 70789.1,
+        "stop_loss": 71412.2,
+        "take_profit": 69854.45000000001,
+        "timestamp": "2024-04-11T08:55:00.000",
+        "fvg_high": 70933.6,
+        "fvg_low": 70859.8,
+        "fvg_time": "2024-04-11T08:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 70857.9,
+        "stop_loss": 71387.4,
+        "take_profit": 70063.65,
+        "timestamp": "2024-04-11T10:20:00.000",
+        "fvg_high": 71000.6,
+        "fvg_low": 70919.6,
+        "fvg_time": "2024-04-11T09:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 70650.0,
+        "stop_loss": 71387.4,
+        "take_profit": 69543.90000000001,
+        "timestamp": "2024-04-11T11:35:00.000",
+        "fvg_high": 70753.6,
+        "fvg_low": 70655.7,
+        "fvg_time": "2024-04-11T07:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 70297.2,
+        "stop_loss": 69613.4,
+        "take_profit": 71322.9,
+        "timestamp": "2024-04-11T13:15:00.000",
+        "fvg_high": 70286.1,
+        "fvg_low": 70157.9,
+        "fvg_time": "2024-04-11T12:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 70322.8,
+        "stop_loss": 69613.4,
+        "take_profit": 71386.90000000002,
+        "timestamp": "2024-04-11T14:55:00.000",
+        "fvg_high": 70304.2,
+        "fvg_low": 70057.0,
+        "fvg_time": "2024-04-11T14:40:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 71038.9,
+        "stop_loss": 71387.4,
+        "take_profit": 70516.15,
+        "timestamp": "2024-04-12T06:15:00.000",
+        "fvg_high": 71210.5,
+        "fvg_low": 71068.7,
+        "fvg_time": "2024-04-12T05:45:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 70821.8,
+        "stop_loss": 71387.4,
+        "take_profit": 69973.40000000002,
+        "timestamp": "2024-04-12T07:30:00.000",
+        "fvg_high": 70941.3,
+        "fvg_low": 70827.2,
+        "fvg_time": "2024-04-12T04:25:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 70728.1,
+        "stop_loss": 70153.3,
+        "take_profit": 71590.30000000002,
+        "timestamp": "2024-04-12T11:05:00.000",
+        "fvg_high": 70728.0,
+        "fvg_low": 70667.7,
+        "fvg_time": "2024-04-12T10:40:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 70126.8,
+        "stop_loss": 69608.1,
+        "take_profit": 70904.85,
+        "timestamp": "2024-04-12T15:00:00.000",
+        "fvg_high": 70108.3,
+        "fvg_low": 69858.3,
+        "fvg_time": "2024-04-12T14:40:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 67228.2,
+        "stop_loss": 66700.5,
+        "take_profit": 68019.75,
+        "timestamp": "2024-04-13T00:50:00.000",
+        "fvg_high": 67224.1,
+        "fvg_low": 67161.5,
+        "fvg_time": "2024-04-12T21:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 67444.0,
+        "stop_loss": 67039.3,
+        "take_profit": 68051.04999999999,
+        "timestamp": "2024-04-13T08:30:00.000",
+        "fvg_high": 67392.6,
+        "fvg_low": 67317.7,
+        "fvg_time": "2024-04-13T08:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 67475.6,
+        "stop_loss": 67039.3,
+        "take_profit": 68130.05000000002,
+        "timestamp": "2024-04-13T08:40:00.000",
+        "fvg_high": 67474.6,
+        "fvg_low": 67392.7,
+        "fvg_time": "2024-04-13T08:10:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 67289.8,
+        "stop_loss": 67039.3,
+        "take_profit": 67665.55,
+        "timestamp": "2024-04-13T10:15:00.000",
+        "fvg_high": 67285.2,
+        "fvg_low": 67216.8,
+        "fvg_time": "2024-04-13T09:45:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 67787.2,
+        "stop_loss": 67116.9,
+        "take_profit": 68792.65,
+        "timestamp": "2024-04-13T12:05:00.000",
+        "fvg_high": 67640.0,
+        "fvg_low": 67519.8,
+        "fvg_time": "2024-04-13T06:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 67262.1,
+        "stop_loss": 67975.4,
+        "take_profit": 66192.15000000002,
+        "timestamp": "2024-04-13T18:00:00.000",
+        "fvg_high": 67389.1,
+        "fvg_low": 67328.8,
+        "fvg_time": "2024-04-13T13:30:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 62654.5,
+        "stop_loss": 62103.5,
+        "take_profit": 63481.0,
+        "timestamp": "2024-04-14T04:15:00.000",
+        "fvg_high": 62600.0,
+        "fvg_low": 62528.0,
+        "fvg_time": "2024-04-14T04:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64221.9,
+        "stop_loss": 64891.6,
+        "take_profit": 63217.350000000006,
+        "timestamp": "2024-04-14T12:05:00.000",
+        "fvg_high": 64490.1,
+        "fvg_low": 64311.9,
+        "fvg_time": "2024-04-14T11:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63991.1,
+        "stop_loss": 64733.0,
+        "take_profit": 62878.25,
+        "timestamp": "2024-04-14T20:25:00.000",
+        "fvg_high": 64065.2,
+        "fvg_low": 64000.0,
+        "fvg_time": "2024-04-14T19:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64018.3,
+        "stop_loss": 64733.0,
+        "take_profit": 62946.25000000001,
+        "timestamp": "2024-04-14T21:10:00.000",
+        "fvg_high": 64102.9,
+        "fvg_low": 64027.2,
+        "fvg_time": "2024-04-14T20:30:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64542.5,
+        "stop_loss": 63800.0,
+        "take_profit": 65656.25,
+        "timestamp": "2024-04-15T18:05:00.000",
+        "fvg_high": 64460.1,
+        "fvg_low": 64366.6,
+        "fvg_time": "2024-04-15T17:15:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63291.1,
+        "stop_loss": 63879.6,
+        "take_profit": 62408.35,
+        "timestamp": "2024-04-16T08:40:00.000",
+        "fvg_high": 63535.7,
+        "fvg_low": 63316.7,
+        "fvg_time": "2024-04-16T08:30:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 62998.0,
+        "stop_loss": 62457.6,
+        "take_profit": 63808.600000000006,
+        "timestamp": "2024-04-16T21:55:00.000",
+        "fvg_high": 62928.3,
+        "fvg_low": 62853.3,
+        "fvg_time": "2024-04-16T20:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63717.8,
+        "stop_loss": 64356.3,
+        "take_profit": 62760.05,
+        "timestamp": "2024-04-17T02:10:00.000",
+        "fvg_high": 63964.9,
+        "fvg_low": 63795.2,
+        "fvg_time": "2024-04-17T01:45:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63890.7,
+        "stop_loss": 64356.3,
+        "take_profit": 63192.29999999999,
+        "timestamp": "2024-04-17T03:15:00.000",
+        "fvg_high": 64148.2,
+        "fvg_low": 64020.0,
+        "fvg_time": "2024-04-17T03:00:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63747.7,
+        "stop_loss": 64356.3,
+        "take_profit": 62834.79999999999,
+        "timestamp": "2024-04-17T03:20:00.000",
+        "fvg_high": 63950.0,
+        "fvg_low": 63876.4,
+        "fvg_time": "2024-04-17T02:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63993.3,
+        "stop_loss": 63541.7,
+        "take_profit": 64670.70000000001,
+        "timestamp": "2024-04-17T04:10:00.000",
+        "fvg_high": 63890.7,
+        "fvg_low": 63826.8,
+        "fvg_time": "2024-04-17T03:20:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63702.9,
+        "stop_loss": 64356.3,
+        "take_profit": 62722.8,
+        "timestamp": "2024-04-17T04:50:00.000",
+        "fvg_high": 63841.8,
+        "fvg_low": 63723.2,
+        "fvg_time": "2024-04-17T02:20:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63972.2,
+        "stop_loss": 63541.7,
+        "take_profit": 64617.95,
+        "timestamp": "2024-04-17T05:30:00.000",
+        "fvg_high": 63881.0,
+        "fvg_low": 63771.2,
+        "fvg_time": "2024-04-17T04:45:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64087.5,
+        "stop_loss": 63541.7,
+        "take_profit": 64906.200000000004,
+        "timestamp": "2024-04-17T05:35:00.000",
+        "fvg_high": 64013.0,
+        "fvg_low": 63891.0,
+        "fvg_time": "2024-04-17T03:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64158.2,
+        "stop_loss": 63541.7,
+        "take_profit": 65082.95,
+        "timestamp": "2024-04-17T05:50:00.000",
+        "fvg_high": 64148.2,
+        "fvg_low": 64055.9,
+        "fvg_time": "2024-04-17T03:10:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 62368.2,
+        "stop_loss": 61680.0,
+        "take_profit": 63400.49999999999,
+        "timestamp": "2024-04-17T14:00:00.000",
+        "fvg_high": 62351.3,
+        "fvg_low": 62259.3,
+        "fvg_time": "2024-04-17T13:35:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 62290.4,
+        "stop_loss": 61680.0,
+        "take_profit": 63206.0,
+        "timestamp": "2024-04-17T14:20:00.000",
+        "fvg_high": 62286.4,
+        "fvg_low": 62223.8,
+        "fvg_time": "2024-04-17T14:05:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 61203.8,
+        "stop_loss": 60563.7,
+        "take_profit": 62163.95000000001,
+        "timestamp": "2024-04-17T22:05:00.000",
+        "fvg_high": 61115.1,
+        "fvg_low": 60964.6,
+        "fvg_time": "2024-04-17T21:45:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 61203.8,
+        "stop_loss": 60563.7,
+        "take_profit": 62163.95000000001,
+        "timestamp": "2024-04-17T22:05:00.000",
+        "fvg_high": 60952.2,
+        "fvg_low": 60867.4,
+        "fvg_time": "2024-04-17T21:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 61352.9,
+        "stop_loss": 61000.0,
+        "take_profit": 61882.25,
+        "timestamp": "2024-04-18T01:00:00.000",
+        "fvg_high": 61345.0,
+        "fvg_low": 61283.1,
+        "fvg_time": "2024-04-18T00:25:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 61528.8,
+        "stop_loss": 61938.0,
+        "take_profit": 60915.00000000001,
+        "timestamp": "2024-04-18T03:15:00.000",
+        "fvg_high": 61730.0,
+        "fvg_low": 61640.2,
+        "fvg_time": "2024-04-18T03:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 61380.0,
+        "stop_loss": 60700.0,
+        "take_profit": 62400.0,
+        "timestamp": "2024-04-18T09:30:00.000",
+        "fvg_high": 61140.9,
+        "fvg_low": 60998.2,
+        "fvg_time": "2024-04-18T09:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 62596.0,
+        "stop_loss": 63147.1,
+        "take_profit": 61769.350000000006,
+        "timestamp": "2024-04-18T12:40:00.000",
+        "fvg_high": 62744.2,
+        "fvg_low": 62651.0,
+        "fvg_time": "2024-04-18T12:20:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63377.9,
+        "stop_loss": 64100.0,
+        "take_profit": 62294.75,
+        "timestamp": "2024-04-19T00:00:00.000",
+        "fvg_high": 63466.2,
+        "fvg_low": 63403.1,
+        "fvg_time": "2024-04-18T23:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63250.0,
+        "stop_loss": 63815.6,
+        "take_profit": 62401.600000000006,
+        "timestamp": "2024-04-19T01:00:00.000",
+        "fvg_high": 63351.1,
+        "fvg_low": 63271.3,
+        "fvg_time": "2024-04-18T23:25:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64754.3,
+        "stop_loss": 64088.1,
+        "take_profit": 65753.6,
+        "timestamp": "2024-04-19T11:55:00.000",
+        "fvg_high": 64719.9,
+        "fvg_low": 64615.6,
+        "fvg_time": "2024-04-19T11:30:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64081.5,
+        "stop_loss": 63477.5,
+        "take_profit": 64987.5,
+        "timestamp": "2024-04-19T22:00:00.000",
+        "fvg_high": 64050.0,
+        "fvg_low": 63891.1,
+        "fvg_time": "2024-04-19T21:35:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64191.7,
+        "stop_loss": 63730.0,
+        "take_profit": 64884.24999999999,
+        "timestamp": "2024-04-20T06:35:00.000",
+        "fvg_high": 64176.8,
+        "fvg_low": 64109.3,
+        "fvg_time": "2024-04-19T23:50:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63882.5,
+        "stop_loss": 64244.0,
+        "take_profit": 63340.25,
+        "timestamp": "2024-04-20T09:00:00.000",
+        "fvg_high": 64052.0,
+        "fvg_low": 63930.1,
+        "fvg_time": "2024-04-20T05:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63715.4,
+        "stop_loss": 64244.0,
+        "take_profit": 62922.5,
+        "timestamp": "2024-04-20T09:05:00.000",
+        "fvg_high": 63804.6,
+        "fvg_low": 63740.1,
+        "fvg_time": "2024-04-20T03:35:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63566.9,
+        "stop_loss": 63045.1,
+        "take_profit": 64349.600000000006,
+        "timestamp": "2024-04-20T11:30:00.000",
+        "fvg_high": 63555.9,
+        "fvg_low": 63476.1,
+        "fvg_time": "2024-04-20T11:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63883.6,
+        "stop_loss": 63244.0,
+        "take_profit": 64843.0,
+        "timestamp": "2024-04-20T13:45:00.000",
+        "fvg_high": 63866.3,
+        "fvg_low": 63776.4,
+        "fvg_time": "2024-04-20T09:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64775.3,
+        "stop_loss": 65480.0,
+        "take_profit": 63718.25000000001,
+        "timestamp": "2024-04-20T20:10:00.000",
+        "fvg_high": 64858.9,
+        "fvg_low": 64798.0,
+        "fvg_time": "2024-04-20T18:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 65082.1,
+        "stop_loss": 64570.5,
+        "take_profit": 65849.5,
+        "timestamp": "2024-04-21T05:45:00.000",
+        "fvg_high": 65070.0,
+        "fvg_low": 64989.7,
+        "fvg_time": "2024-04-21T05:10:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 65165.7,
+        "stop_loss": 64728.3,
+        "take_profit": 65821.79999999999,
+        "timestamp": "2024-04-21T14:20:00.000",
+        "fvg_high": 65141.7,
+        "fvg_low": 65022.3,
+        "fvg_time": "2024-04-21T13:50:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64708.0,
+        "stop_loss": 65226.9,
+        "take_profit": 63929.649999999994,
+        "timestamp": "2024-04-21T17:00:00.000",
+        "fvg_high": 64821.8,
+        "fvg_low": 64752.6,
+        "fvg_time": "2024-04-21T02:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64948.7,
+        "stop_loss": 64322.7,
+        "take_profit": 65887.7,
+        "timestamp": "2024-04-21T23:05:00.000",
+        "fvg_high": 64899.5,
+        "fvg_low": 64838.5,
+        "fvg_time": "2024-04-21T22:30:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 65204.3,
+        "stop_loss": 64520.2,
+        "take_profit": 66230.45000000001,
+        "timestamp": "2024-04-22T02:15:00.000",
+        "fvg_high": 64946.7,
+        "fvg_low": 64856.9,
+        "fvg_time": "2024-04-22T01:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 65847.8,
+        "stop_loss": 66449.0,
+        "take_profit": 64946.00000000001,
+        "timestamp": "2024-04-22T10:45:00.000",
+        "fvg_high": 66018.0,
+        "fvg_low": 65857.7,
+        "fvg_time": "2024-04-22T06:40:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66119.9,
+        "stop_loss": 65466.6,
+        "take_profit": 67099.84999999999,
+        "timestamp": "2024-04-22T14:00:00.000",
+        "fvg_high": 65993.6,
+        "fvg_low": 65932.9,
+        "fvg_time": "2024-04-22T12:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 65736.2,
+        "stop_loss": 66449.0,
+        "take_profit": 64666.99999999999,
+        "timestamp": "2024-04-22T14:30:00.000",
+        "fvg_high": 65971.4,
+        "fvg_low": 65907.7,
+        "fvg_time": "2024-04-22T13:55:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 65736.2,
+        "stop_loss": 66449.0,
+        "take_profit": 64666.99999999999,
+        "timestamp": "2024-04-22T14:30:00.000",
+        "fvg_high": 66084.6,
+        "fvg_low": 65976.8,
+        "fvg_time": "2024-04-22T14:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66041.7,
+        "stop_loss": 65466.6,
+        "take_profit": 66904.34999999999,
+        "timestamp": "2024-04-22T14:45:00.000",
+        "fvg_high": 65991.6,
+        "fvg_low": 65879.5,
+        "fvg_time": "2024-04-22T14:30:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 65929.3,
+        "stop_loss": 65600.7,
+        "take_profit": 66422.20000000001,
+        "timestamp": "2024-04-22T16:40:00.000",
+        "fvg_high": 65920.6,
+        "fvg_low": 65845.3,
+        "fvg_time": "2024-04-22T16:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66300.2,
+        "stop_loss": 65600.7,
+        "take_profit": 67349.45,
+        "timestamp": "2024-04-22T17:15:00.000",
+        "fvg_high": 66161.0,
+        "fvg_low": 66059.1,
+        "fvg_time": "2024-04-22T15:55:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66338.8,
+        "stop_loss": 65600.7,
+        "take_profit": 67445.95000000001,
+        "timestamp": "2024-04-22T20:40:00.000",
+        "fvg_high": 66326.0,
+        "fvg_low": 66246.7,
+        "fvg_time": "2024-04-22T20:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66656.7,
+        "stop_loss": 66094.6,
+        "take_profit": 67499.84999999998,
+        "timestamp": "2024-04-22T23:00:00.000",
+        "fvg_high": 66656.0,
+        "fvg_low": 66518.9,
+        "fvg_time": "2024-04-22T18:55:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66993.4,
+        "stop_loss": 66300.1,
+        "take_profit": 68033.34999999998,
+        "timestamp": "2024-04-23T01:55:00.000",
+        "fvg_high": 66981.3,
+        "fvg_low": 66870.6,
+        "fvg_time": "2024-04-23T00:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66734.9,
+        "stop_loss": 67222.0,
+        "take_profit": 66004.24999999999,
+        "timestamp": "2024-04-23T03:45:00.000",
+        "fvg_high": 66849.9,
+        "fvg_low": 66738.6,
+        "fvg_time": "2024-04-23T01:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66522.3,
+        "stop_loss": 67158.9,
+        "take_profit": 65567.40000000002,
+        "timestamp": "2024-04-23T04:35:00.000",
+        "fvg_high": 66609.6,
+        "fvg_low": 66524.7,
+        "fvg_time": "2024-04-22T23:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66458.0,
+        "stop_loss": 66094.6,
+        "take_profit": 67003.09999999999,
+        "timestamp": "2024-04-23T06:30:00.000",
+        "fvg_high": 66360.1,
+        "fvg_low": 66294.1,
+        "fvg_time": "2024-04-23T05:45:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66320.3,
+        "stop_loss": 66730.0,
+        "take_profit": 65705.75,
+        "timestamp": "2024-04-23T07:50:00.000",
+        "fvg_high": 66422.2,
+        "fvg_low": 66333.2,
+        "fvg_time": "2024-04-23T06:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66101.2,
+        "stop_loss": 66730.0,
+        "take_profit": 65157.99999999999,
+        "timestamp": "2024-04-23T08:35:00.000",
+        "fvg_high": 66233.0,
+        "fvg_low": 66124.0,
+        "fvg_time": "2024-04-22T18:00:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66692.3,
+        "stop_loss": 67158.9,
+        "take_profit": 65992.40000000002,
+        "timestamp": "2024-04-23T16:10:00.000",
+        "fvg_high": 66810.0,
+        "fvg_low": 66699.0,
+        "fvg_time": "2024-04-23T15:50:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66482.7,
+        "stop_loss": 66887.0,
+        "take_profit": 65876.25,
+        "timestamp": "2024-04-23T20:40:00.000",
+        "fvg_high": 66589.2,
+        "fvg_low": 66485.1,
+        "fvg_time": "2024-04-23T17:05:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66234.9,
+        "stop_loss": 65750.0,
+        "take_profit": 66962.24999999999,
+        "timestamp": "2024-04-23T21:30:00.000",
+        "fvg_high": 66200.0,
+        "fvg_low": 66139.1,
+        "fvg_time": "2024-04-23T21:15:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66728.0,
+        "stop_loss": 67099.7,
+        "take_profit": 66170.45000000001,
+        "timestamp": "2024-04-24T06:25:00.000",
+        "fvg_high": 66903.9,
+        "fvg_low": 66755.0,
+        "fvg_time": "2024-04-24T05:45:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66711.2,
+        "stop_loss": 66414.0,
+        "take_profit": 67157.0,
+        "timestamp": "2024-04-24T07:35:00.000",
+        "fvg_high": 66702.3,
+        "fvg_low": 66640.2,
+        "fvg_time": "2024-04-24T07:00:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66560.0,
+        "stop_loss": 67068.2,
+        "take_profit": 65797.70000000001,
+        "timestamp": "2024-04-24T08:45:00.000",
+        "fvg_high": 66704.4,
+        "fvg_low": 66608.1,
+        "fvg_time": "2024-04-24T07:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66381.4,
+        "stop_loss": 67068.2,
+        "take_profit": 65351.19999999999,
+        "timestamp": "2024-04-24T10:05:00.000",
+        "fvg_high": 66504.3,
+        "fvg_low": 66394.4,
+        "fvg_time": "2024-04-24T01:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66560.0,
+        "stop_loss": 66074.4,
+        "take_profit": 67288.40000000001,
+        "timestamp": "2024-04-24T12:25:00.000",
+        "fvg_high": 66490.0,
+        "fvg_low": 66416.3,
+        "fvg_time": "2024-04-24T10:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 66700.0,
+        "stop_loss": 66172.0,
+        "take_profit": 67492.0,
+        "timestamp": "2024-04-24T13:05:00.000",
+        "fvg_high": 66656.5,
+        "fvg_low": 66567.6,
+        "fvg_time": "2024-04-24T09:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66372.9,
+        "stop_loss": 66856.0,
+        "take_profit": 65648.24999999999,
+        "timestamp": "2024-04-24T13:45:00.000",
+        "fvg_high": 66500.6,
+        "fvg_low": 66410.9,
+        "fvg_time": "2024-04-24T12:25:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 66004.8,
+        "stop_loss": 66711.9,
+        "take_profit": 64944.150000000016,
+        "timestamp": "2024-04-24T15:10:00.000",
+        "fvg_high": 66097.2,
+        "fvg_low": 66020.8,
+        "fvg_time": "2024-04-24T14:35:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63892.2,
+        "stop_loss": 63537.3,
+        "take_profit": 64424.54999999999,
+        "timestamp": "2024-04-24T21:25:00.000",
+        "fvg_high": 63862.2,
+        "fvg_low": 63785.8,
+        "fvg_time": "2024-04-24T21:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64171.8,
+        "stop_loss": 63575.0,
+        "take_profit": 65067.00000000001,
+        "timestamp": "2024-04-25T00:10:00.000",
+        "fvg_high": 64138.7,
+        "fvg_low": 64071.0,
+        "fvg_time": "2024-04-24T23:45:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64287.8,
+        "stop_loss": 63575.0,
+        "take_profit": 65357.00000000001,
+        "timestamp": "2024-04-25T00:40:00.000",
+        "fvg_high": 64279.0,
+        "fvg_low": 64170.9,
+        "fvg_time": "2024-04-24T23:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64279.5,
+        "stop_loss": 63786.1,
+        "take_profit": 65019.600000000006,
+        "timestamp": "2024-04-25T03:20:00.000",
+        "fvg_high": 64229.1,
+        "fvg_low": 64149.7,
+        "fvg_time": "2024-04-25T02:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64279.0,
+        "stop_loss": 63823.2,
+        "take_profit": 64962.700000000004,
+        "timestamp": "2024-04-25T05:30:00.000",
+        "fvg_high": 64220.5,
+        "fvg_low": 64148.0,
+        "fvg_time": "2024-04-25T05:05:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64287.2,
+        "stop_loss": 63823.2,
+        "take_profit": 64983.2,
+        "timestamp": "2024-04-25T06:40:00.000",
+        "fvg_high": 64285.6,
+        "fvg_low": 64206.6,
+        "fvg_time": "2024-04-25T06:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 64282.5,
+        "stop_loss": 63823.2,
+        "take_profit": 64971.450000000004,
+        "timestamp": "2024-04-25T08:05:00.000",
+        "fvg_high": 64278.0,
+        "fvg_low": 64204.0,
+        "fvg_time": "2024-04-25T07:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63954.8,
+        "stop_loss": 64446.0,
+        "take_profit": 63218.00000000001,
+        "timestamp": "2024-04-25T08:35:00.000",
+        "fvg_high": 64093.8,
+        "fvg_low": 64028.5,
+        "fvg_time": "2024-04-25T03:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63954.8,
+        "stop_loss": 64446.0,
+        "take_profit": 63218.00000000001,
+        "timestamp": "2024-04-25T08:35:00.000",
+        "fvg_high": 64183.2,
+        "fvg_low": 64084.2,
+        "fvg_time": "2024-04-25T06:30:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63642.2,
+        "stop_loss": 63244.0,
+        "take_profit": 64239.49999999999,
+        "timestamp": "2024-04-25T12:10:00.000",
+        "fvg_high": 63630.0,
+        "fvg_low": 63557.3,
+        "fvg_time": "2024-04-25T11:20:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63790.6,
+        "stop_loss": 64365.0,
+        "take_profit": 62929.0,
+        "timestamp": "2024-04-25T13:30:00.000",
+        "fvg_high": 63978.6,
+        "fvg_low": 63832.5,
+        "fvg_time": "2024-04-25T13:05:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64437.9,
+        "stop_loss": 65122.0,
+        "take_profit": 63411.75,
+        "timestamp": "2024-04-25T18:20:00.000",
+        "fvg_high": 64541.5,
+        "fvg_low": 64456.2,
+        "fvg_time": "2024-04-25T18:00:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64576.5,
+        "stop_loss": 65122.0,
+        "take_profit": 63758.25,
+        "timestamp": "2024-04-25T20:30:00.000",
+        "fvg_high": 64663.0,
+        "fvg_low": 64584.8,
+        "fvg_time": "2024-04-25T19:55:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64294.9,
+        "stop_loss": 64718.9,
+        "take_profit": 63658.9,
+        "timestamp": "2024-04-26T04:00:00.000",
+        "fvg_high": 64389.4,
+        "fvg_low": 64323.0,
+        "fvg_time": "2024-04-26T02:40:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64294.9,
+        "stop_loss": 64718.9,
+        "take_profit": 63658.9,
+        "timestamp": "2024-04-26T04:00:00.000",
+        "fvg_high": 64461.7,
+        "fvg_low": 64354.5,
+        "fvg_time": "2024-04-26T03:10:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64207.5,
+        "stop_loss": 64718.9,
+        "take_profit": 63440.399999999994,
+        "timestamp": "2024-04-26T05:05:00.000",
+        "fvg_high": 64305.4,
+        "fvg_low": 64225.0,
+        "fvg_time": "2024-04-26T02:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64160.7,
+        "stop_loss": 64590.3,
+        "take_profit": 63516.29999999999,
+        "timestamp": "2024-04-26T11:45:00.000",
+        "fvg_high": 64288.2,
+        "fvg_low": 64218.1,
+        "fvg_time": "2024-04-26T06:30:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63803.1,
+        "stop_loss": 64544.8,
+        "take_profit": 62690.54999999999,
+        "timestamp": "2024-04-26T14:15:00.000",
+        "fvg_high": 63968.8,
+        "fvg_low": 63848.0,
+        "fvg_time": "2024-04-25T16:50:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63791.8,
+        "stop_loss": 64097.4,
+        "take_profit": 63333.40000000001,
+        "timestamp": "2024-04-26T23:25:00.000",
+        "fvg_high": 63929.8,
+        "fvg_low": 63868.7,
+        "fvg_time": "2024-04-26T22:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 62943.9,
+        "stop_loss": 63300.0,
+        "take_profit": 62409.75,
+        "timestamp": "2024-04-27T05:50:00.000",
+        "fvg_high": 63047.7,
+        "fvg_low": 62970.6,
+        "fvg_time": "2024-04-27T05:20:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 62984.0,
+        "stop_loss": 62760.7,
+        "take_profit": 63318.950000000004,
+        "timestamp": "2024-04-27T10:30:00.000",
+        "fvg_high": 62981.3,
+        "fvg_low": 62917.2,
+        "fvg_time": "2024-04-27T10:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63029.5,
+        "stop_loss": 62650.0,
+        "take_profit": 63598.75,
+        "timestamp": "2024-04-27T18:35:00.000",
+        "fvg_high": 63003.2,
+        "fvg_low": 62875.7,
+        "fvg_time": "2024-04-27T17:25:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63752.9,
+        "stop_loss": 63115.0,
+        "take_profit": 64709.75,
+        "timestamp": "2024-04-28T03:45:00.000",
+        "fvg_high": 63723.7,
+        "fvg_low": 63500.0,
+        "fvg_time": "2024-04-27T01:25:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63651.9,
+        "stop_loss": 64350.0,
+        "take_profit": 62604.75,
+        "timestamp": "2024-04-28T09:40:00.000",
+        "fvg_high": 63913.8,
+        "fvg_low": 63761.8,
+        "fvg_time": "2024-04-28T03:50:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63727.2,
+        "stop_loss": 63230.7,
+        "take_profit": 64471.95,
+        "timestamp": "2024-04-28T14:15:00.000",
+        "fvg_high": 63682.5,
+        "fvg_low": 63615.1,
+        "fvg_time": "2024-04-28T11:10:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63922.8,
+        "stop_loss": 63423.7,
+        "take_profit": 64671.45000000001,
+        "timestamp": "2024-04-28T19:45:00.000",
+        "fvg_high": 63784.6,
+        "fvg_low": 63716.6,
+        "fvg_time": "2024-04-28T09:40:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63720.1,
+        "stop_loss": 64041.4,
+        "take_profit": 63238.149999999994,
+        "timestamp": "2024-04-28T20:30:00.000",
+        "fvg_high": 63861.5,
+        "fvg_low": 63758.7,
+        "fvg_time": "2024-04-28T19:45:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63088.3,
+        "stop_loss": 62650.0,
+        "take_profit": 63745.75000000001,
+        "timestamp": "2024-04-29T00:55:00.000",
+        "fvg_high": 63073.4,
+        "fvg_low": 62996.0,
+        "fvg_time": "2024-04-29T00:00:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 62368.3,
+        "stop_loss": 62711.9,
+        "take_profit": 61852.90000000001,
+        "timestamp": "2024-04-29T11:55:00.000",
+        "fvg_high": 62456.5,
+        "fvg_low": 62371.4,
+        "fvg_time": "2024-04-29T10:50:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 62183.9,
+        "stop_loss": 62711.9,
+        "take_profit": 61391.9,
+        "timestamp": "2024-04-29T14:35:00.000",
+        "fvg_high": 62394.6,
+        "fvg_low": 62309.6,
+        "fvg_time": "2024-04-29T13:35:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 62956.9,
+        "stop_loss": 63337.8,
+        "take_profit": 62385.55,
+        "timestamp": "2024-04-29T18:35:00.000",
+        "fvg_high": 63040.6,
+        "fvg_low": 62974.4,
+        "fvg_time": "2024-04-29T18:25:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 62776.9,
+        "stop_loss": 63337.8,
+        "take_profit": 61935.55,
+        "timestamp": "2024-04-29T19:30:00.000",
+        "fvg_high": 62863.0,
+        "fvg_low": 62799.6,
+        "fvg_time": "2024-04-29T18:00:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63011.0,
+        "stop_loss": 62511.1,
+        "take_profit": 63760.850000000006,
+        "timestamp": "2024-04-29T22:45:00.000",
+        "fvg_high": 62972.6,
+        "fvg_low": 62880.4,
+        "fvg_time": "2024-04-29T22:10:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 64037.5,
+        "stop_loss": 64783.1,
+        "take_profit": 62919.100000000006,
+        "timestamp": "2024-04-30T02:30:00.000",
+        "fvg_high": 64300.0,
+        "fvg_low": 64150.0,
+        "fvg_time": "2024-04-30T01:45:00.000"
+    },
+    {
+        "side": "short",
+        "entry": 63128.7,
+        "stop_loss": 63874.8,
+        "take_profit": 62009.54999999999,
+        "timestamp": "2024-04-30T06:35:00.000",
+        "fvg_high": 63260.4,
+        "fvg_low": 63177.0,
+        "fvg_time": "2024-04-29T23:15:00.000"
+    },
+    {
+        "side": "long",
+        "entry": 63376.5,
+        "stop_loss": 62787.6,
+        "take_profit": 64259.850000000006,
+        "timestamp": "2024-04-30T07:15:00.000",
+        "fvg_high": 63350.0,
+        "fvg_low": 63246.2,
+        "fvg_time": "2024-04-30T06:30:00.000"
+    }
+]

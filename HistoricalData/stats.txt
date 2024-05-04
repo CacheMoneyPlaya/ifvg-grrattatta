@@ -1,0 +1,75 @@
+Historical: 6 Groups
+
+FVG: 60
+SL: 750
+R:R 1.5
+
+Total Wins: 67
+Total Losses: 88
+
+WR - 43.23%
+
+profit = 1250
+
+---------------------------
+
+FVG: 80
+SL: 300
+R:R 1.5
+
+Total Wins: 0
+Total Losses: 0
+
+WR - 0%
+
+Profit  = 0
+
+---------------------------
+
+FVG: 80
+SL: 550
+R:R 1.5
+
+Total Wins: 17
+Total Losses: 18
+
+WR - 48.57%
+
+profit = 750
+
+---------------------------
+
+FVG: 80
+SL: 550
+R:R 2
+
+Total Wins: 16
+Total Losses: 19
+
+WR - 48.57%
+
+profit = 1300
+
+---------------------------
+
+Historical 9 Groups:
+
+FVG: 80
+SL: 550
+R:R 1.5
+
+Total Wins: 29
+Total Losses: 33
+
+WR - 46.77%
+
+profit = 1050
+
+---------------------------
+
+FVG: 80
+SL: 550
+R:R 1.5
+
+Total Wins: 29
+Total Losses: 33
