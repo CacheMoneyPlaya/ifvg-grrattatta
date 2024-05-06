@@ -28,7 +28,7 @@ def fetch_multiple_data(symbol, interval, limit=1500, num_sets=3):
 
 symbol = "BTCUSDT"
 interval = "5m"
-num_sets = 9
+num_sets = 11
 data_sets = fetch_multiple_data(symbol, interval, num_sets=num_sets)
 
 combined_data = []
@@ -53,4 +53,4 @@ if not os.path.exists(directory):
     os.makedirs(directory)
 
 # Save DataFrame to JSON file with datetime format
-df.to_json(os.path.join(directory, "btc_m5_10_days.json"), date_format='iso', orient='records')
+df.to_json(os.path.join(directory, "btc_m5_current.json"), date_format='iso', orient='records')

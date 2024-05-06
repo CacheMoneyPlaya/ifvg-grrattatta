@@ -8,7 +8,7 @@ import json
 from LiquidityLevels.liquidity_levels import get_nearest_liq_levels
 
 def gap_valid(num1, num2):
-    threshold = 60
+    threshold = 80
     num1 = float(num1)
     num2 = float(num2)
 
@@ -51,35 +51,9 @@ def determine_fvg(previous, current, next):
                 'fvg_low': next['high'],
             })
 
-def calculate_fvg(df):
-    for i in range(1, len(df) - 2):
-        previous = df.iloc[i - 1]
-        current = df.iloc[i]
-        next = df.iloc[i + 1]
-        determine_fvg(previous, current, next)
-
-    i=0
-    while i < len(BEAR_FVGS):
-        fvg_time = BEAR_FVGS[i]['time']
-        df_after_fvg = df[df['time'] > fvg_time].iloc[:-2]
-        if (df_after_fvg['close'] > BEAR_FVGS[i]['fvg_high']).any():
-            del BEAR_FVGS[i]
-        else:
-            i += 1
-
-    i=0
-    while i < len(BULL_FVGS):
-        fvg_time = BULL_FVGS[i]['time']
-        df_after_fvg = df[df['time'] > fvg_time].iloc[:-2]
-        if (df_after_fvg['close'] < BULL_FVGS[i]['fvg_low']).any():
-            del BULL_FVGS[i]
-        else:
-            i += 1
-
-
-def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low):
+def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low, fvg_time):
     stop_loss = nearest_ssl_price
-    tp_difference = abs(float(entry) - float(nearest_ssl_price)) * 2
+    tp_difference = abs(float(entry) - float(nearest_ssl_price)) * 1.5
     if side == 'long':
         take_profit = float(entry) + tp_difference
     else:
@@ -107,7 +81,51 @@ def log_trade(side, entry, nearest_ssl_price, timestamp, fvg_high, fvg_low):
     with open('trade_execution_log.json', 'w') as file:
         json.dump(trade_log, file, indent=4)
 
-def find_nearest_price(prices, target_price, threshold=750):
+def calculate_full_window_fvg(df):
+    for i in range(1, len(df) - 2):
+        previous = df.iloc[i - 1]
+        current = df.iloc[i]
+        next = df.iloc[i + 1]
+        determine_fvg(previous, current, next)
+
+    i=0
+    while i < len(BEAR_FVGS):
+        fvg_time = BEAR_FVGS[i]['time']
+        df_after_fvg = df[df['time'] > fvg_time].iloc[:-2]
+        if (df_after_fvg['close'] > BEAR_FVGS[i]['fvg_high']).any():
+            del BEAR_FVGS[i]
+        else:
+            i += 1
+
+    i=0
+    while i < len(BULL_FVGS):
+        fvg_time = BULL_FVGS[i]['time']
+        df_after_fvg = df[df['time'] > fvg_time].iloc[:-2]
+        if (df_after_fvg['close'] < BULL_FVGS[i]['fvg_low']).any():
+            del BULL_FVGS[i]
+        else:
+            i += 1
+
+def filter_violated_bear(current, first):
+    global BEAR_FVGS
+    BEAR_FVGS = [fvg for fvg in BEAR_FVGS if current['close'] < fvg['fvg_high'] and fvg['time'] >= first['time']]
+
+def filter_violated_bull(current, first):
+    global BULL_FVGS
+    BULL_FVGS = [fvg for fvg in BULL_FVGS if current['close'] > fvg['fvg_low'] and fvg['time'] >= first['time']]
+
+def calculate_current_fvg(df):
+    previous = df.iloc[-4]
+    current = df.iloc[-3]
+    next = df.iloc[-2]
+    first = df.iloc[0]
+
+    determine_fvg(previous, current, next)
+
+    filter_violated_bear(current, first)
+    filter_violated_bull(current, first)
+
+def find_nearest_price(prices, target_price, threshold=600):
     closest_price = None
     min_gap = threshold + 1
     for price in prices:
@@ -122,18 +140,25 @@ def execute():
     BULL_FVGS = []
     BEAR_FVGS = []
     LIQ_LEVELS = []
+    INITIALIZE_FVGS_COMPLETE = False
 
     while True:
         now = datetime.now()
         current_minute = now.minute
         current_second = now.second
 
-        if current_minute % 5 == 0 and current_second == 1:
+        if current_minute % 5 == 0 and current_second == 1::
             print(f"Checking @ {now}")
+            window_data = fetch_data()
+
             LIQ_LEVELS = get_nearest_liq_levels()
-            df = fetch_data()
-            calculate_fvg(df)
-            latest_candle = df.iloc[-2]
+
+            if not INITIALIZE_FVGS_COMPLETE:
+                calculate_full_window_fvg(window_data)
+            else:
+                calculate_current_fvg(window_data)
+
+            latest_candle = window_data.iloc[-2]
 
             is_bull = latest_candle['close'] >= latest_candle['open']
 
@@ -142,19 +167,16 @@ def execute():
                     if latest_candle['close'] > x['fvg_high']:
                         nearest_ssl_price = find_nearest_price([ssl['price'] for ssl in LIQ_LEVELS['SSL']], latest_candle['close'])
                         if nearest_ssl_price is not None:
-                            print(f"market LONG @ {datetime.now()}")
-                            log_trade('long', latest_candle['close'], nearest_ssl_price, datetime.now(), x['fvg_high'], x['fvg_low'])
+                            log_trade('long', latest_candle['close'], nearest_ssl_price, latest_candle['time'], x['fvg_high'], x['fvg_low'], x['time'])
             else:
                 for x in BULL_FVGS:
                     if latest_candle['close'] < x['fvg_low']:
                         nearest_bsl_price = find_nearest_price([bsl['price'] for bsl in LIQ_LEVELS['BSL']], latest_candle['close'])
                         if nearest_bsl_price is not None:
-                            print(f"market SHORT @ {datetime.now()}")
-                            log_trade('short', latest_candle['close'], nearest_bsl_price, datetime.now(), x['fvg_high'], x['fvg_low'])
+                            log_trade('short', latest_candle['close'], nearest_bsl_price, latest_candle['time'], x['fvg_high'], x['fvg_low'], x['time'])
 
-            BULL_FVGS = []
-            BEAR_FVGS = []
             LIQ_LEVELS = []
+            INITIALIZE_FVGS_COMPLETE = True
             time.sleep(280)
 
 if __name__ == '__main__':
